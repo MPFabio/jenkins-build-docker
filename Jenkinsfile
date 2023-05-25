@@ -6,11 +6,11 @@ node {
     }
 
     stage('build image') {
-	app = dockerbuild("fabio/nginx")
+	app = docker.build("fabio/nginx")
     }
 
     stage('run image') {
-	dockerimage('fabio/nginx')withRun('-p 80:80') { c ->
+	docker.image('fabio/nginx').withRun('-p 80:80') { c ->
 
 	sh 'docker ps'
 	
