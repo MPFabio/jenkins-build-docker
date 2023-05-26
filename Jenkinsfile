@@ -6,6 +6,7 @@ node {
     }
 
     stage('build image') {
+	sh 'cd /home/fabio/docker-jenkins'
 	app = docker.build("fabio/nginx")
     }
 
